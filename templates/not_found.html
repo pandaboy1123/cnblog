@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>404 - Page not found</title>
+    <link href="/static/CSS/css.css" rel="stylesheet" type="text/css" />
+    <link href="/static/blog/bs/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="/static/JS/jquery-3.3.1.min.js"></script>
+</head>
+<script type="text/javascript">
+    $(document).ready(function(event) {
+        $("#centerrr").center();
+    });
+    jQuery.fn.center = function() {
+        this.css("position", "fixed");
+        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+            $(window).scrollTop()) + "px");
+        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+            $(winadow).scrollLeft()) + "px");
+        return this;
+    };
+</script>
+</head>
+
+<body style="
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#17a086+0,34495e+100 */
+background: #17a086; /* Old browsers */
+{#background: -moz-radial-gradient(center, ellipse cover, #17a086 0%, #34495e 100%); /* FF3.6-15 */#}
+{#background: -webkit-radial-gradient(center, ellipse cover, #17a086 0%,#34495e 100%); /* Chrome10-25,Safari5.1-6 */#}
+background: radial-gradient(ellipse at center, #17a086 0%,#34495e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17a086', endColorstr='#34495e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+             ">
+    <div class="container">
+        <div class="container" id="centerrr">
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3"></div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                <div id="box">
+                    <div id="circle"></div>
+                    <div id="circle2"></div>
+                    <div class="text pull-right" style="font-size: 16px; color: white; font-weight: bold; font-family: 'allerB2';">出错啦</div>
+                </div>
+                <div id="box2">
+                    <div id="boxin">
+                        <h1 style="font-family:'allerB2';color:#fffffe;margin:0;">404 - Error :(</h1>
+                        <div class="notload" style="height:50px; width:50px ;"></div>
+
+                        <div style="height:10px; width:100% ;"></div>
+                        <div class="notload" style="height:10px; width:70% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div class="notload" style="height:10px; width:90% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div class="notload" style="height:10px; width:50% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div class="notload" style="height:10px; width:60% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div class="notload" style="height:10px; width:80% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div class="notload" style="height:10px; width:40% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <div style="height:10px; width:100% ;"></div>
+                        <h5 style="font-family:'allerB2';color:#fffffe;margin:0;text-align:left">找不到您想要的网址<a id="back_to_index" href="/index/">返回首页</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

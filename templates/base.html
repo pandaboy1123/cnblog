@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ request.user.username }}</title>
+    <script src="/static/JS/jquery-3.3.1.min.js"></script>
+    <link rel="shortcut icon" href=" /static/imgs/login.ico"/>
+    <link rel="stylesheet" href="/static/blog/bs/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/CSS/base.css">
+    <link rel="stylesheet" href="/static/CSS/article_detail.css">
+    <script src="/static/blog/bs/dist/js/bootstrap.min.js"></script>
+    <script src="/static/JS/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/static/blog/fa/web-fonts-with-css/css/fontawesome-all.min.css">
+</head>
+<body>
+<div class="header">
+    <div class="content">
+        <p class="title">
+            <span>{{ blog.site_name }}的个人博客</span>
+            <a href="" class="backend">管理</a>
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 ">
+                {% load my_tags %}
+                {% get_classification_style user.username %}
+        </div>
+        <div class="col-md-9">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

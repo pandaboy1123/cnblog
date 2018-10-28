@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "allerB1";
+    src:url("/static/font/AllerDisplay.woff") format('woff');
+}
+@font-face {
+    font-family: "allerB2";
+    src: url("/static/font/Aller_Bd.woff") format('woff');
+}
+body {
+    min-height: 100%;
+}
+html {
+    margin: 0;
+    background-color: #fffffe;
+    /*
+    #34495e
+    #17a086
+*/
+}
+#m1:hover ~ #m1 {
+    box-shadow: 1px 1px #0000ff;
+}
+#box {
+    width: 100%;
+    height: 38px;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    /*    background-color: #607d8b;*/
+    background-color: #34495e;
+    padding: 11px;
+    padding-left: 13px;
+}
+#box2 {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+    background: rgb(240, 238, 227);
+    background: -webkit-radial-gradient(top left, rgb(240, 238, 227), rgb(224, 221, 207));
+    background: -o-radial-gradient(top left, rgb(240, 238, 227), rgb(224, 221, 207));
+    background: -moz-radial-gradient(top left, rgb(240, 238, 227), rgb(224, 221, 207));
+    background: radial-gradient(top left, rgb(240, 238, 227), rgb(224, 221, 207));
+    padding: 18px;
+}
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+@keyframes AnimationName {
+    0% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+
+}
+
+/*
+#boxin:hover > .notload{
+    background-color: #9c9b94;
+}
+*/
+
+.notload {
+    background: linear-gradient(90deg,  #ffffff,#b6b6b6,#ffffff);
+    background-size: 2000% 2000%;
+    -webkit-animation: AnimationName 2.5s ease infinite;
+    -moz-animation: AnimationName 2.5s ease infinite;
+    animation: AnimationName 2.5s ease infinite;
+}
+/*
+.notload:nth-child(1) {
+    transition: 0.2s;
+}
+.notload:nth-child(2) {
+    transition: 0.4s;
+}
+.notload:nth-child(3) {
+    transition: 0.6s;
+}
+.notload:nth-child(4) {
+    transition: 0.8s;
+}
+.notload:nth-child(5) {
+    transition: 1s;
+}
+.notload:nth-child(6) {
+    transition: 1.2s;
+}
+.notload:nth-child(7) {
+    transition: 1.4s;
+}
+.notload:hover {
+    background-color: #9c9b94;
+}
+*/
+#circle:hover {
+    border: 4px solid white;
+    cursor: pointer;
+}
+#circle2:hover {
+    border: 4px solid white;
+    cursor: pointer;
+}
+#circle {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ff3366;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+#circle2 {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    transition: 0.2s;
+}
+#boxin {
+    width: 100%;
+    height: auto;
+    background-color: #bebdb3;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+#boxin2 {
+    float: left;
+    width: 62%;
+    height: 200px;
+    background-color: #bebdb3;
+    margin-right: 14px;
+}
+#boxin3 {
+    float: left;
+    width: 35%;
+    height: 200px;
+    background-color: #bebdb3;
+}
+#centerrr {
+    /*    margin-top: 15%;*/
+}
+img {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+#img1 {
+    position: absolute;
+    margin-top: -8.1%;
+    margin-left: 14%;
+    z-index: -2;
+    opacity: 0.5;
+}
+#img2 {
+    position: absolute;
+    margin-top: -9%;
+    margin-left: 46%;
+    z-index: -2;
+}
+#back_to_index{
+    margin-left: 300px;
+    color: white;
+}

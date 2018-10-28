@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <link rel="shortcut icon" href=" /static/imgs/login.ico"/>
+    <link rel="stylesheet" href="/static/blog/bs/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/blog/fa/web-fonts-with-css/css/fontawesome-all.min.css">
+    <style type="text/css">
+        #avatar{
+            display: none;
+        }
+        #avatar_img{
+            cursor: pointer;
+            display: none;
+        }
+        #avatar_img_i{
+            cursor: pointer;
+            display: block;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="background-color: #eeeeee">
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3 ">
+            <div class="form-group col-lg-offset-4">
+                <i class="fas fa-registered fa-10x"></i>
+                <div>Register with your account</div>
+            </div>
+            <div class="form-group">
+                <form id="form">
+                    {% csrf_token %}
+                <div class="form-group">
+                            <label for="avatar">
+                                上传头像
+                                <i id="avatar_img_i" class="far fa-image fa-5x"></i>
+                                <img  id="avatar_img" src="/static/imgs/default.png" style="width: 60px; height: 60px">
+                            </label>
+                            <input type="file" id="avatar">
+                        </div>
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label for="{{ field.auto_id }}">{{ field.label }}</label>
+                            {{ field }} <span class="error pull-right"></span>
+                        </div>
+                    {% endfor %}
+
+                    <div class="form-group">
+                        <button id="popup-submit" type="button" class="btn btn-success login_btn col-lg-3"><i
+                                class="fa fa-sign-in-alt col-lg-pull-1"></i>注册
+                        </button>
+                        {#                    <div class="form-group">#}
+                        {#                         <label for="pwd"><i class="fas fa-key"></i>密码</label>#}
+                        {#                        <input type="password" id="pwd" class="form-control">#}
+                        {#                    </div>#}
+                        {#                    <div class="form-group">#}
+                        {#                         <label for="re_pwd"><i class="fas fa-check-square"></i>确认密码</label>#}
+                        {#                        <input type="password" id="re_pwd" class="form-control">#}
+                        {#                    </div>#}
+                        {#                     <div class="form-group">#}
+                        {#                         <label for="email"><i class="fas fa-envelope"></i>邮箱</label>#}
+                        {#                         <input type="email" id="email" class="form-control">#}
+                        {#                    </div>#}
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="/static/JS/jquery-3.3.1.min.js"></script>
+<script>
+    $('#avatar').change(function () {
+        var file_obj = $(this)[0].files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file_obj);
+        reader.onload = function(){
+            $('#avatar_img_i').hide();
+            $('#avatar_img').attr('src', reader.result).css('display', 'block');
+        };
+    });
+    //基于ajax提交事件
+    $('.login_btn').click(function () {
+        var formdata = new FormData();
+        var request_data = $('#form').serializeArray();
+        $.each(request_data, function (index, data) {
+            formdata.append(data.name, data.value);
+        });
+        formdata.append('avatar', $("#avatar")[0].files[0]);
+       $.ajax({
+            url:'',
+           type:'post',
+           contentType:false,
+           processData:false,
+           data: formdata,
+           success:function (data) {
+               if(data.user){
+                   //注册成功
+                   location.href = '/login/'
+               }else {
+                   //注册失败
+                   {#console.log(data.msg);#}
+                   //清空错误信息
+                   $('span.error').html(" ");
+                   $('.form-group').removeClass('has-error');
+                   $.each(data.msg, function (field, error_list) {
+                       console.log(field, error_list);
+                       if (field=="__all__"){
+                           $('#id_re_pwd').next().html(error_list[0]).parent().addClass("has-error");
+                       }
+                        $("#id_"+field).next().html(error_list[0]);
+                        $("#id_"+field).parent().addClass("has-error");
+                   });
+               }
+           }
+       });
+    });
+</script>
+</html>
