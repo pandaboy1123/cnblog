@@ -39,4 +39,40 @@ https://github.com/pandaboy1123/cnblog/
 ![image](https://github.com/pandaboy1123/cnblog/blob/master/readme/9%20%E9%98%B2%E6%AD%A2xss%E6%94%BB%E5%87%BB(10%E5%88%86).gif)
 <hr>
 
+<h3>环境配置要求</h3>
+<table>
+  <thead>
+    <tr>
+    <th>三方库名</th>
+    <th>版本号</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>python</td>
+    <td>3.6</td>
+  </tr>
+    <tr>
+    <td>Django</td>
+    <td>2.1.2</td>
+  </tr>
+    <tr>
+    <td>Pillow</td>
+    <td>5.3.0</td>
+  </tr>
+    <tr>
+    <td>PyMySQL</td>
+    <td>0.9.2</td>
+  </tr>
+    <tr>
+    <td>bs4</td>
+    <td>0.0.1</td>
+  </tr>
+    <tr>
+    <td>其他</td>
+    <td>自行配置</td>
+  </tr>
+   
+  </tbody>
+</table>
+
 PS:有很多小bug目前还未修复，只是简单的实现了几个功能而已
