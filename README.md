@@ -1,5 +1,7 @@
 # cnblog
 路飞学城第六模块作业2
+详情查看
+https://github.com/pandaboy1123/cnblog/
 <h3>1 基于ajax和用户认证组件实现登录验证(10分)</h3>
 
 ![image](https://github.com/pandaboy1123/cnblog/blob/master/readme/1%20基于ajax和用户认证组件实现登录验证(10分).gif)
